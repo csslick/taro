@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>타로카드운세</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    html, body{
+      height: 100%;
+    }
+    body{
+      background-image: url("images/bg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    section {
+      padding: 20px;
+    }
+    #card{
+      width: 200px;
+      height: 350px;
+      background: #ccc;
+      display: inline-block;
+      margin-top: 100px;
+    }
+    #card > img {
+      width: 200px;
+      height: 350px;
+    }
+    #txt{ 
+      width: 80%;
+      margin: 1em auto;
+      background: rgba(0,0,0,0.3);
+      line-height: 1.5em;
+    }
+    #txt p { padding: 20px;}
+    #btn{
+      padding: 10px 25px;
+      margin-top: 1em;
+      border: 1px solid #fff;
+      background:rgba(0,0,0,0.3);
+      color: #fff;
+      font-size: 18px;
+      transition-duration: 0.4s;
+    }
+    #btn:hover {
+      background:rgba(255,255,255,0.7);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>타로카드운세</h1>
+    <div id="card">
+      <img src="http://placehold.it/200x350&text=card" alt="">
+    </div>
+    <div id="txt"></div>
+    <br>
+    <button id="btn" onclick="showCard();">운세보기</button>
+  </section>
+
+  <script>
+    function showCard() {
+      var rnd = Math.floor(Math.random() * 5 + 1);
+      console.log(rnd);
+      var card = document.querySelector('#card');
+      var txt = document.querySelector('#txt');
+
+      if(rnd == 1){
+        card.innerHTML = "<img src='images/1.png'>";
+        txt.innerHTML = "<p>원하지 않는것을 나타나는 카드로 '여사제' 카드가 나왔습니다. 여사제는 처녀성을 상징하며(결혼을 안 하기 때문이죠) 아이를 낳지 못하는 질문자의 모습입니다.</p>";
+      }
+      if(rnd == 2){
+        card.innerHTML = "<img src='images/2.png'>";
+        txt.innerHTML = "<p>가까운 미래를 상징하는 카드로 '여왕' 카드가 나왔습니다. 여왕 카드는 풍요로움과 어머니를 상징하며 그림을 보시면 볼록하게 나온배가 임신을 하였다는것을 알 수 가 있습니다.</p>";
+      }
+      if(rnd == 3){
+        card.innerHTML = "<img src='images/3.png'>";
+        txt.innerHTML = "<p>'거꾸로 매달린 남자' 카드가 나왔습니다. 자신을 스스로 묶고 대의를 위해 희생한다는 뜻이 담긴 거꾸로 매달린 남자' 카드입니다.</p>"
+      }
+      if(rnd == 4){
+        card.innerHTML = "<img src='images/4.png'>";
+        txt.innerHTML = "<p>현재상황을 나타나는 카드로 '달' 카드가 나왔습니다. 일반적으로 변화, 변동, 불확실성, 과도기 상태를 뜻하지만 그림을 자세히 들여다 보시면 가재가 물가에서 나오지 못하고 있는 형상이 보입니다. 질문자의 내용을 중심으로 판단해 보시면 가재(아이)가 물(자궁)에서 물위(출산)로 나오지 못하고 있는 형상이 연상됩니다.</p>";
+      }
+      if(rnd == 5){
+        card.innerHTML = "<img src='images/5.png'>";
+        txt.innerHTML = "<p>원하는 것을 나타나는 카드로 '태양' 카드가 나왔습니다. 태양카드는 창조의 근원이 되며 생명의 궁극적인 상징입니다. 그림만 봐도 아기를 원하고 있다라고 바로 해석이 되지요.</p>"
+      }
+    }
+
+
+
+  </script>
+</body>
+</html>
